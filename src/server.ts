@@ -5,6 +5,10 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import { PORT } from './config/config';
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 const app = express();
 app.use(morgan('dev'));
 app.use(express.json({ limit: '20mb' }));
