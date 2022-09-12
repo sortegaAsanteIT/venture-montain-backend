@@ -5,5 +5,9 @@ export const DATABASE = {
 };
 
 export const PORT = process.env.PORT || 5000;
-export const JWT_SECRET = '@JwT_$3Cr3t@';
-export const NODE_ENV = 'DEVELOP';
+export const NODE_ENV = process.env.NODE_ENV || 'DEVELOP';
+export const AUTH0_CONFIG = {
+  ISSUER: process.env.AUTH0_ISSUER,
+  JWKS_URI: process.env.AUTH0_JWKS_URI || '',
+  AUDIENCE: process.env.AUTH0_AUDIENCE || ''
+};
